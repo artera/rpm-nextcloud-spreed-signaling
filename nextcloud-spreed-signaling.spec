@@ -9,6 +9,7 @@ URL:           https://github.com/strukturag/nextcloud-spreed-signaling
 Source0:       https://github.com/strukturag/nextcloud-spreed-signaling/releases/download/v%{version}/%{name}-v%{version}.tar.gz
 Source1:       signaling.user
 Patch0:        make-parallel.patch
+BuildRequires: git
 BuildRequires: golang
 BuildRequires: make
 BuildRequires: systemd-rpm-macros
