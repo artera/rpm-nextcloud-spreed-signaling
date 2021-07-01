@@ -1,14 +1,13 @@
 %define _sysusersdir %{_prefix}/lib/sysusers.d
 
 Name:          nextcloud-spreed-signaling
-Version:       0.2.0
+Version:       0.3.0
 Release:       1%{?dist}
 Summary:       Standalone signaling server for Nextcloud Talk
 License:       GPLv2+
 URL:           https://github.com/strukturag/nextcloud-spreed-signaling
 Source0:       https://github.com/strukturag/nextcloud-spreed-signaling/releases/download/v%{version}/%{name}-v%{version}.tar.gz
 Source1:       signaling.user
-Patch0:        make-parallel.patch
 BuildRequires: git
 BuildRequires: golang
 BuildRequires: make
