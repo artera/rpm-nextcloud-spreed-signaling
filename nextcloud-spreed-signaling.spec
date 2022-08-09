@@ -1,17 +1,17 @@
 %define _sysusersdir %{_prefix}/lib/sysusers.d
 
 Name:          nextcloud-spreed-signaling
-Version:       0.5.0
+Version:       1.0.0
 Release:       1%{?dist}
 Summary:       Standalone signaling server for Nextcloud Talk
 License:       GPLv2+
 URL:           https://github.com/strukturag/nextcloud-spreed-signaling
 Source0:       https://github.com/strukturag/nextcloud-spreed-signaling/releases/download/v%{version}/%{name}-v%{version}.tar.gz
-Source1:       signaling.user
 BuildRequires: git
 BuildRequires: golang
 BuildRequires: make
 BuildRequires: systemd-rpm-macros
+BuildRequires: protobuf-compiler
 
 %description
 Standalone signaling server for Nextcloud Talk.
@@ -29,7 +29,7 @@ install -Dm0755 bin/proxy %{buildroot}%{_bindir}/signaling-proxy
 install -Dm0644 server.conf.in %{buildroot}%{_sysconfdir}/signaling/server.conf
 install -Dm0644 proxy.conf.in %{buildroot}%{_sysconfdir}/signaling/proxy.conf
 install -Dm0644 dist/init/systemd/signaling.service %{buildroot}%{_unitdir}/signaling.service
-install -Dm0644 %{SOURCE1} %{buildroot}%{_sysusersdir}/signaling.conf
+install -Dm0644 dist/init/systemd/sysusers.d/signaling.conf %{buildroot}%{_sysusersdir}/signaling.conf
 
 %files
 %{_bindir}/signaling*
