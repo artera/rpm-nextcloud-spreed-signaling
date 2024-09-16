@@ -1,7 +1,7 @@
 %define _sysusersdir %{_prefix}/lib/sysusers.d
 
 Name:          nextcloud-spreed-signaling
-Version:       1.3.2
+Version:       2.0.0
 Release:       1%{?dist}
 Summary:       Standalone signaling server for Nextcloud Talk
 License:       GPLv2+
