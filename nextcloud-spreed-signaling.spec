@@ -1,7 +1,7 @@
 %define _sysusersdir %{_prefix}/lib/sysusers.d
 
 Name:          nextcloud-spreed-signaling
-Version:       2.0.4
+Version:       2.1.0
 Release:       1%{?dist}
 Summary:       Standalone signaling server for Nextcloud Talk
 License:       GPLv2+
@@ -23,7 +23,7 @@ export GOFLAGS="-buildmode=pie -trimpath -ldflags=-linkmode=external -mod=readon
 # %make_build client
 
 # fix incompatible hardening setting
-sed -r '/^NoExecPaths=' -i dist/init/systemd/signaling.service
+sed -r '/^NoExecPaths=/d' -i dist/init/systemd/signaling.service
 
 %install
 # install -Dm0755 bin/client %{buildroot}%{_bindir}/signaling-client
